@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":  "nodemon src/index.js",
-    "start":  "node src/index.js" 
+    "dev":  "nodemon src/index.js", //Para que el programa se ejecute a cada cambio que se haga, además se marca como devDependency con npm i nodemon -D
+    "start":  "node src/index.js" //Para que el servidor sepa cual es la ruta para empezar a ejecutar el programa
   },
   "keywords": [],
   "author": "",

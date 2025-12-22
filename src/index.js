@@ -1,14 +1,16 @@
-const express = require ("express");
+const express = require ("express"); //express: será el encargado de configurar las funcionalidades básicas del servidor
+
 const app = express();
 
-app.set("port", process.env.PORT || 8080);
+app.set("port", process.env.PORT || 8080); //El puerto 8080 lo fijamos como puerto de inicio, nos servirá para hacer las pruebas
 
 app.listen(app.get("port"), () => {
-    console.log("hola desde el puerto:" + app.get("port"));
+    console.log("hola desde el puerto:" + app.get("port")); //Esto hace una peticion get al puerto que hemos marcado con ese mensaje
 });
 
 
-app.use(require("./routes/index"));
+app.use(require("./routes/index")); //lamada del módulo recién creado en el archivo inicial, para que funcione la ruta del otro archivo
+
 
 
 

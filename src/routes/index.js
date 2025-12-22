@@ -1,6 +1,12 @@
 const { Router } = require("express");
 const router = Router();
 
+/*Aquí tenemos las rutas get, que cuando el usuario llega a ellas, le devuelven información, cuando escribimos
+http://127.0.0.1:8080/"nombre de la ruta" en el navegador llegamos a ellas.*/
+
+/*Este archivo "index.js" se crea en una carpeta “routes” con otro archivo index.js 
+donde escribir todas las rutas independientes del archivo de inicio del programa, para tenerlo todo más compacto y ordenado*/
+
 router.get("/home", (req, res) => {
   console.log("Alguien accedió al servidor");
   res.send("Bienvenido a TimeRight");
@@ -27,3 +33,4 @@ router.get("/ajustes", (req, res) => {
 });
 
 module.exports = router;
+
