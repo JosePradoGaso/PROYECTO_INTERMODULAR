@@ -32,5 +32,54 @@ router.get("/ajustes", (req, res) => {
   res.send("Aquí puede ajustar sus preferencias");
 });
 
+router.post("/inicioSesion", (req, res) => {
+  req.body = "String de prueba" //Aquí se guardan los datos de los usuarios
+  console.log("Enviada una peticion POST");
+  console.log(req.body);
+  res.send("Pimera ruta POST");
+});
+
+router.post("/datosNomina", (req, res) => {
+  req.body = "String de prueba" //Aquí se guardan los datos de los usuarios
+  console.log("Enviada una peticion POST");
+  console.log(req.body);
+  res.json({
+    Title:"Segunda ruta POST",
+  });
+});
+
+router.post("/datosHorarios", (req, res) => {
+  req.body = "String de prueba" //Aquí se guardan los datos de los usuarios
+  console.log("Enviada una peticion POST");
+  console.log(req.body);
+  res.send("Tercera ruta POST");
+});
+
+router.post("/datosSalario", (req, res) => {
+  req.body = "String de prueba" //Aquí se guardan los datos de los usuarios
+  console.log("Enviada una peticion POST");
+  console.log(req.body);
+  res.send("Cuarta ruta POST");
+});
+
+router.post("/datosPreferencias", (req, res) => {
+  req.body = "String de prueba" //Aquí se guardan los datos de los usuarios
+  console.log("Enviada una peticion POST");
+  console.log(req.body);
+  res.json({
+    Title:"Quinta ruta POST",
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
 module.exports = router;
 
