@@ -15,6 +15,7 @@ const usuariosDB = [
   { username: "jugador4", password: "password345" },
 ];
 //RUTAS GET
+/*
 router.get("/home", (req, res) => {
   console.log("Alguien accedió al servidor");
   res.json({ mensaje: "Bienvenido a TimeRight" });
@@ -38,7 +39,7 @@ router.get("/nominas", (req, res) => {
 router.get("/ajustes", (req, res) => {
   console.log("Alguien entro a ajustes");
   res.json({ mensaje: "Aquí puede ajustar sus preferencias" });
-});
+});*/
 
 // 1. SISTEMA DE LOGIN (POST)
 router.post("/inicioSesion", (req, res) => {
@@ -112,7 +113,8 @@ router.post("/datosHorarios", (req, res) => {
   console.log("Enviada una peticion POST a /datosHorarios");
   console.log("Datos recibidos desde Unity:", req.body);
   res.json({
-    Title: "Datos de Horarios",
+    success: true,
+    mensaje: "Contraseña actualizada correctamente.",
   });
 });
 
