@@ -14,32 +14,6 @@ const usuariosDB = [
   { username: "jugador3", password: "password012" },
   { username: "jugador4", password: "password345" },
 ];
-//RUTAS GET
-/*
-router.get("/home", (req, res) => {
-  console.log("Alguien accedió al servidor");
-  res.json({ mensaje: "Bienvenido a TimeRight" });
-});
-
-router.get("/horarios", (req, res) => {
-  console.log("Alguien entro a ver sus horarios");
-  res.json({ mensaje: "Sus horarios son los siguientes" });
-});
-
-router.get("/calcularHoras", (req, res) => {
-  console.log("Alguien entro a calcular sus horas");
-  res.json({ mensaje: "Calculo de horas realizado" });
-});
-
-router.get("/nominas", (req, res) => {
-  console.log("Alguien entro a ver sus nóminas");
-  res.json({ mensaje: "Aquí están sus nóminas" });
-});
-
-router.get("/ajustes", (req, res) => {
-  console.log("Alguien entro a ajustes");
-  res.json({ mensaje: "Aquí puede ajustar sus preferencias" });
-});*/
 
 // 1. SISTEMA DE LOGIN (POST)
 router.post("/inicioSesion", (req, res) => {
@@ -49,12 +23,10 @@ router.post("/inicioSesion", (req, res) => {
   const usuarioEncontrado = usuariosDB.find((u) => u.username === username);
 
   if (!usuarioEncontrado) {
-    return res
-      .status(401)
-      .json({
-        success: false,
-        mensaje: "El nombre de usuario no es correcto.",
-      });
+    return res.status(401).json({
+      success: false,
+      mensaje: "El nombre de usuario no es correcto.",
+    });
   }
 
   if (usuarioEncontrado.password !== password) {
@@ -75,12 +47,10 @@ router.post("/registro", (req, res) => {
   const existeUsuario = usuariosDB.find((u) => u.username === username);
 
   if (existeUsuario) {
-    return res
-      .status(400)
-      .json({
-        success: false,
-        mensaje: "Ese nombre de usuario ya está en uso.",
-      });
+    return res.status(400).json({
+      success: false,
+      mensaje: "Ese nombre de usuario ya está en uso.",
+    });
   }
 
   if (!username || !password) {
