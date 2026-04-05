@@ -40,7 +40,7 @@ router.get("/ajustes", (req, res) => {
   res.json({ mensaje: "Aquí puede ajustar sus preferencias" });
 });
 
-// 1. SISTEMA DE LOGIN
+// 1. SISTEMA DE LOGIN (POST)
 router.post("/inicioSesion", (req, res) => {
   console.log("Petición de Login recibida");
   const { username, password } = req.body; // Leemos los datos que envía Unity
@@ -65,7 +65,7 @@ router.post("/inicioSesion", (req, res) => {
   return res.json({ success: true, mensaje: "Acceso concedido. ¡Bienvenido!" });
 });
 
-//SISTEMA DE REGISTRO EN POST
+//SISTEMA DE REGISTRO (POST)
 router.post("/registro", (req, res) => {
   console.log("Petición de Registro recibida");
   const { username, password } = req.body;
@@ -98,7 +98,7 @@ router.post("/registro", (req, res) => {
   });
 });
 
-// 2. DATOS NÓMINA
+// 2. DATOS NÓMINA (POST)
 router.post("/datosNomina", (req, res) => {
   console.log("Enviada una peticion POST a /datosNomina");
   console.log("Datos recibidos desde Unity:", req.body); // Mostramos lo que envía Unity, sin sobreescribirlo
@@ -107,7 +107,7 @@ router.post("/datosNomina", (req, res) => {
   });
 });
 
-// 3. DATOS HORARIOS
+// 3. DATOS HORARIOS (POST)
 router.post("/datosHorarios", (req, res) => {
   console.log("Enviada una peticion POST a /datosHorarios");
   console.log("Datos recibidos desde Unity:", req.body);
@@ -116,7 +116,7 @@ router.post("/datosHorarios", (req, res) => {
   });
 });
 
-// 4. DATOS SALARIO
+// 4. DATOS SALARIO (POST)
 router.post("/datosSalario", (req, res) => {
   console.log("Enviada una peticion POST a /datosSalario");
   console.log("Datos recibidos desde Unity:", req.body);
@@ -125,7 +125,7 @@ router.post("/datosSalario", (req, res) => {
   });
 });
 
-// 5. DATOS PREFERENCIAS
+// 5. DATOS PREFERENCIAS (POST)
 router.post("/datosPreferencias", (req, res) => {
   console.log("Enviada una peticion POST a /datosPreferencias");
   console.log("Datos recibidos desde Unity:", req.body);
@@ -134,7 +134,7 @@ router.post("/datosPreferencias", (req, res) => {
   });
 });
 
-// 6. RECUPERACIÓN / EDICIÓN DE CONTRASEÑA
+// 6. RECUPERACIÓN / EDICIÓN DE CONTRASEÑA (POST)
 router.post("/editarPassword", (req, res) => {
   console.log("Petición para editar contraseña");
   const { username, oldPassword, newPassword } = req.body;
